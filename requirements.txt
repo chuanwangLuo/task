@@ -1,7 +1,7 @@
 alembic==1.7.7
 attrs==22.2.0
 click==8.0.4
-dataclasses==0.8
+dataclasses==0.6
 Flask==2.0.3
 Flask-Migrate==4.0.1
 Flask-SQLAlchemy==2.5.1
@@ -15,7 +15,6 @@ Jinja2==3.0.3
 Mako==1.1.6
 MarkupSafe==2.0.1
 packaging==21.3
-pkg_resources==0.0.0
 pluggy==1.0.0
 py==1.11.0
 pyparsing==3.1.1
