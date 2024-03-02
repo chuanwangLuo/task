@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">Internal Server Error!</h4>
+  <p>Something went wrong on our end. Please try again later.</p>
+  <hr>
+  <a class="btn btn-primary" href="{{ url_for('index') }}">Back to Home</a>
+</div>
+{% endblock %}

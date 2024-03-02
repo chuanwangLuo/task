@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">Page Not Found!</h4>
+  <p>The page you are looking for does not exist. Please check the URL or go back to the homepage.</p>
+  <hr>
+  <a class="btn btn-primary" href="{{ url_for('index') }}">Back to Home</a>
+</div>
+{% endblock %}

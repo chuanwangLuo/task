@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2>User List</h2>
+<a href="{{ url_for('new_user') }}" class="btn btn-primary">Add New User</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.name }}</td>
+            <td>
+                <!-- 这里添加编辑和删除按钮 -->
+                <a href="/user/edit/{{ user.id }}" class="btn btn-secondary">Edit</a>
+                <a href="/user/delete/{{ user.id }}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
