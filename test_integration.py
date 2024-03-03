@@ -18,14 +18,14 @@ class IntegrationTestCase(unittest.TestCase):
         self.app_context.pop()
 
     def test_task_flow(self):
-        # 添加一个新任务
+# Add a new task
         response = self.client.post('/add', data={
             'title': 'Integration Test Task',
             'content': 'Integration Test Content'
         }, follow_redirects=True)
         self.assertEqual(response.status_code, 200)
         
-        # 验证任务是否被正确添加
+# Verify that the task was added correctly
         task = Task.query.first()
         self.assertIsNotNone(task)
         self.assertEqual(task.title, 'Integration Test Task')

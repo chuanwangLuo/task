@@ -2,19 +2,20 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-class User(db.Model):
+class User(db.Model):#User class represents a user. It inherits from db.Model, meaning it is a database model.
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     tasks = db.relationship('Task', backref='user', lazy=True)
 
-class Task(db.Model):
+class Task(db.Model):#Task class represents a task. It also inherits from db.Model.
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
+    #user_id is a foreign key that points to the id field of the User table and establishes the relationship between Task and User.
     def __repr__(self):
         return f'Task(id={self.id}, title={self.title})'
+#The __repr__ method defines the string representation of this class
 
 class Country(db.Model):
     id = db.Column(db.Integer, primary_key=True)
